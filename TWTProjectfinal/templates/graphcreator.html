@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Atlanta Hawks</title>
+<!--CSS sheet link-->
+<link rel="stylesheet" href="static/style.css">
+
+<!--Bootstrap CDN link-->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<!--Navbar-->
+<script>
+
+</script>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light changecolor topsize" style="top: 0px; width: 100%;" id="nav">
+    <a class="navbar-brand" href="#" style="color: white; z-index: 99 !important; right: 50%; margin-left: 10%; margin-top: 1%;">Atlanta Hawks</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="z-index: 99;">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link underline" href="/">Home<span class="sr-only"></span></a>
+        <a class="nav-item nav-link underline" href="/blog">WikiSearch</a>
+        <a class="nav-item nav-link underline" href="/players">SpeachToText</a>
+        <a class="nav-item nav-link underline" href="/Upcomingfixtures">GraphCreator</a>
+      </div>
+    </div>
+  </nav>
+  <div class="para" style="position: absolute; left: -30px; top: 0px;"></div>
+</header>
+<!--Navbar end-->
+<body>
+  <center>
+    <form id="linegraph">
+      <div style="margin-left: 10px; width: 20%; margin-top: 2%;">
+      <h1>Line Graph</h1>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Graph Title</label>
+          <input type="text" class="form-control"aria-describedby="emailHelp" placeholder="Enter email" name="title" id="title">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Y-Axis Name</label>
+          <input type="password" class="form-control" placeholder="Password" name="yaxis" id="yaxis">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">X-Axis Name</label>
+          <input type="password" class="form-control" placeholder="Password" name="xaxis" id="xaxis">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Line Name</label>
+          <input type="password" class="form-control" placeholder="Password" name="lname" id="lname">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">PointsToPlot</label>
+          <input type="number" min="0" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="ptoplot" id="ptoplot2">
+        </div>
+        <!-- Button trigger modal -->
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Launch demo modal
+        </button>
+      </form>
+        
+        <script>
+          var ptoplot2 = document.getElementById('ptoplot2');
+          var title = document.getElementById('title');
+          var yaxis = document.getElementById('yaxis');
+          var xaxis = document.getElementById('xaxis');
+          var lname = document.getElementById('lname');
+          var title1;
+          var yaxis1;
+          var xaxis1;
+          var lname1;
+          var ptoplot21;
+          linegraph.addEventListener('submit', function(e) {
+                e.preventDefault();
+                  title1 = title.value;
+                  yaxis1 = yaxis.value;
+                  xaxis1 = xaxis.value;
+                  lname1 = lname.value;
+                  ptoplot21 = parseInt(ptoplot2.value);
+              });
+        </script>
+
+        <!-- Modal -->
+        <form id="finalsubmit">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Graph Points To Plot</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div id="elements"></div>
+              <script>
+                var text;
+                var i;
+                linegraph.addEventListener('submit', function(e) {
+                  for (i = 0; i < ptoplot21; i++) {
+                    text += `<div class="modal-body"><div style="display: flex;"><div class="form-group"><label for="exampleInputEmail1">X</label><input type="number" min="0" class="form-control" id="xval` + (i+1).toString() + `" aria-describedby="emailHelp" placeholder="Enter x value" name="ptoplot"></div><div class="form-group"><label for="exampleInputEmail1">Y</label><input type="number" min="0" class="form-control" id="yval` + (i+1).toString() + `" aria-describedby="emailHelp" placeholder="Enter email" name="ptoplot"></div></div></div>`;
+                    document.getElementById("elements").innerHTML = text.replace('undefined','');
+                  }
+                  text = '';
+                });
+               
+                  </script>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </center>
+
+<!--Jquery and Bootstrap Javascript CDN-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!--
+<script>
+  
+linegraph.addEventListener('submit', function(e) {
+var placeholder;
+  e.preventDefault();
+  for (i = 0; i < ptoplot21; i++) {
+    placeholder
+    var finalvalues['xval'+i] = document.getElementById('xval'+i).value;
+    finalvalues['yval'+i] = document.getElementById('yval'+i).value;
+  }
+})
+</script>
+-->
+<script>
+finalsubmit.addEventListener('submit', function(e){
+  e.preventDefault();
+  let finalvalues = {ptoplot2: ptoplot21, title:title1, yaxis:yaxis1, xaxis:xaxis1, lname:lname1}
+  let almostfinalvalsx = [];
+  let almostfinalvalsy = [];
+  for (i = 0; i < ptoplot21; i++) {
+    almostfinalvalsx.push(document.getElementById('xval'+(i+1)).value)
+    almostfinalvalsy.push(document.getElementById('yval'+(i+1)).value)
+  }
+  finalvalues['xvals'] = almostfinalvalsx;
+  finalvalues['yvals'] = almostfinalvalsy;
+  console.log(finalvalues)
+  fetch("/graphcreator", {
+    method: "POST", 
+    body: JSON.stringify(finalvalues)
+  }).then(res => {
+    window.location.replace('graphmaker+'+JSON.stringify(finalvalues));
+  });
+
+})
+
+</script>
+
+</body>
+
+</html>

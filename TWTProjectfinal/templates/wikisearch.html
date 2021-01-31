@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Atlanta Hawks</title>
+<!--CSS sheet link-->
+<link rel="stylesheet" href="static/style.css">
+
+<!--Bootstrap CDN link-->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<!--Navbar-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light changecolor topsize" style="top: 0px; width: 100%;" id="nav">
+    <a class="navbar-brand" href="#" style="color: white; z-index: 99 !important; right: 50%; margin-left: 10%; margin-top: 1%;">Atlanta Hawks</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="z-index: 99;">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link underline" href="/">Home<span class="sr-only"></span></a>
+        <a class="nav-item nav-link underline" href="/blog">WikiSearch</a>
+        <a class="nav-item nav-link underline" href="/players">SpeachToText</a>
+        <a class="nav-item nav-link underline" href="/Upcomingfixtures">GraphCreator</a>
+      </div>
+    </div>
+  </nav>
+  <div class="para" style="position: absolute; left: -30px; top: 0px;"></div>
+</header>
+<!--Navbar end-->
+<body>
+    <center>
+        <p class="h1 " style="padding-top: 2%;"">WikiSearch</p>
+    </center>
+
+    <form action="#" method="post">
+        <div class="input-group mb-3" style="padding-top: 2%; padding-left: 10%; padding-right: 10%;">
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name='wiki'>
+            <div class="input-group-prepend">
+                <button class="input-group-text" id="inputGroup-sizing-default" type="submit">Enter</button>
+            </div>
+        </div>
+    </form>
+    <center>
+        {%for key, value in len%} 
+          <div style="width: auto;">
+            <div class="card-body">
+              <h5 class="card-title">{{key}}</h5>
+              <p class="card-text">{{value}}</p>
+            </div>
+          </div>
+        {%endfor%} 
+    </center>
+
+<!--Jquery and Bootstrap Javascript CDN-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

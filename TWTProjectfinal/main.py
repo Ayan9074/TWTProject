@@ -123,7 +123,7 @@ def graphmaker(listii):
         plt.xlabel(xaxis)
         plt.ylabel(yaxis)
         ax.legend()
-        fig.savefig('TWTProjectcopy/static/plot.png')
+        fig.savefig('TWTProjectfinal/static/plot.png')
         return render_template("graphmaker.html", listii=listii)
 
 @app.route("/textospeach", methods=["POST", "GET"])
